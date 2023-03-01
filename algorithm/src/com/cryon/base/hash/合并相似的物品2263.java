@@ -1,4 +1,4 @@
-package com.cryon.hash.base;
+package com.cryon.base.hash;
 
 import java.util.*;
 

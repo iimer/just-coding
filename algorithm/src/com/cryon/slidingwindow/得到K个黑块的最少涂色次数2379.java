@@ -23,6 +23,23 @@ package com.cryon.slidingwindow;
  */
 public class 得到K个黑块的最少涂色次数2379 {
     public int minimumRecolors(String blocks, int k) {
-        return 0;
+        final char[] bs = blocks.toCharArray();
+        int nowNum = 0;
+        for (int i = 0; i < k; i++) {
+            if (bs[i] == 'W') {
+                nowNum +=1;
+            }
+        }
+        int res = nowNum;
+        for (int i = k; i < bs.length; i++) {
+            if (bs[i] == 'W') {
+                nowNum+=1;
+            }
+            if (bs[i-k] == 'W'){
+                nowNum-=1;
+            }
+            res = Math.min(nowNum,res);
+        }
+        return res;
     }
 }

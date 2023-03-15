@@ -42,7 +42,7 @@ public class 统计子树中城市之间最大距离1617 {
         this.n = n;
         g = new ArrayList[n];
         Arrays.setAll(g, e -> new ArrayList<>());
-        for (var e : edges) {
+        for (int[] e : edges) {
             int x = e[0] - 1, y = e[1] - 1; // 编号改为从 0 开始
             g[x].add(y);
             g[y].add(x); // 建树
